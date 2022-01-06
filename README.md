@@ -5,7 +5,8 @@ In this assignment, a dynamic quiz was created. The welcome screen prompts the u
 ## Completed Assignment
 
 This image shows the completed assignment's appearance, and functionality:
+![screenshot of website welcome screen](https://user-images.githubusercontent.com/95140164/148321742-3b8b033f-9dc7-4450-a1ce-21e80be4df1a.jpeg)
 
-![screenshot of website](./Assets/Images/quizCat.jpeg)
 
 ## Link to Deployed Site
+

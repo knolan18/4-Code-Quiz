@@ -5,124 +5,82 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz Cat</title>
+  <link rel="stylesheet" href="./Assets/CSS/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Monoton&display=swap" rel="stylesheet">  
 </head>
 
 <body>
+<main>
 
 <!-- Welcome Screen -->
 <div id = "welcomeScreen">
   <header>
-    <!-- TODO: insert background image -->
-    <h1>Welcome to Quiz Cat!</h1>
-      <h2>Press the "MEOW" button to play</h2>
-        <div>
-          <button>
-            <!-- TODO: insert button to start quiz -->
-          </button>
-        </div>
+    <h1 class="welcomeScreen">Welcome to Quiz Cat!</h1>
   </header>
+  <section class = "welcomeScreen">
+      <h2 >Press the "MEOW" button to play</h2>
+    <div>
+      <button id = "startBtn">MEOW!</button>
+    </div>      
+  </section>
 </div>
-<!-- TODO: hide welcome screen -->
 
-<!-- TODO: pull question screen -->
-<!-- Question Screen -->
-<div id = "quizScreen">
-  <!-- Question Block -->
-  <div class = "questionBlock">
-    <h2 id = "titleLogo">Quiz Cat (logo)</h2>
-  </div>
-    <section class = "questionBlock">
-      <h3 id = "questionX" class = "questionBlock">Qustion # "_"></h3>
-        <div class = randomQuestion>
-          <h4 class = "questions"></h4>
-        </div>
-        <!-- answers Block -->
-          <div id = "answers" class = "answerBlock">
-            <!-- answer A block -->
-            <aside class = "answerBtn">
-              <h4 id = "answerA">A</h4>
-                <p class = "wrongORcorrect"></p>
-            </aside>
-            <!-- answer B block -->
-            <aside class = "answerBtn">
-              <h4 id = "answerB">B</h4>
-                <p class = "wrongORcorrect"></p>
-            </aside>
-            <!-- answer C block -->
-            <aside class = "answerBtnk">
-              <h4 id = "answerC">C</h4>
-                <p class = "wrongORcorrect"></p>
-            </aside>
-            <!-- answer D block -->
-            <aside class = "answerBtn">
-              <h4 id = "answerD">D</h4>
-                <p class = "wrongORcorrect"></=>
-            </aside>
-          </div>
-        </div>
-    </section>
-  </div>
-
-  <!-- Timer Block -->
-  <section id = "timerBlock">
-    <h3 id = "timerTitle">Time Remaining:</h3>
-      <h4 id = "timeRemaining"></h4>
+<!-- Questions Screen -->
+<div id = "questionsScreen" class = "hide">
+  <section id = "questContainer" class = "questionsContainer">
+    <div id = "question" class = "questionsContainer">Question</div>
+      <aside class = "score-timer">
+        <p id = "scoreEl" class = "questionsContainer">Score: <br><span id="score"></span></p><br>
+        <p id = "timerEl" class = "questionContainer">Time Left: <br><span id="timeLeft"></span></p>
+      </aside> 
   </section>
-
-  <!-- Score Block -->
-  <!-- <section id = "scoreBlock">
-    <h3 id = "playerTitle">Score:</h3>
-      <h4 class = "playerScore"></h4>
+  <section class = "answerContainer box">
+    <div id = "answerBtn" class = "btnGrid hide"></div>
+      <div class = "controls">
+        <!-- <button id = "startBtn" class = "controls">MEOW!</button> -->
+        <button id = "nextBtn" class = "controls hide">Next</button>
+        <button id = "scoreBtn" class = "controls hide">Record Score</button>
+      </div>
+    </div>
   </section>
-</div> -->
-<!-- TODO: pull quesiton screen -->
+</div>
 
-<!-- TODO: push Player Score Screen -->
 <!-- Player Score Screen -->
-<div>
-  <!-- logo -->
-  <div>
-    <h2 id = "titleLogo">Quiz Cat (logo)</h2>
-  </div>
   <!-- Time is Up Block -->
-  <section id = timesUpBlock>
-    <h3 id = "timesUp">Your Time is Up!</h3>
-  </section>
-  <!-- Player Score Block -->
-  <section id = "scoreBlock">
+<div id = "playerScoreScreen" class = "hide">
+  <section class = "timesUpBlock" >
+    <!-- Player Score Block -->
     <div class = "playerScoreBlock">
-      <h2 id = "titleLogo">Quiz Cat (logo)</h2>
-        <h3 class = "playerScore"></h3>
+      <h2 id = "timesUp">Your Time is Up!</h2>
+        <p id = "scoreEl">Your Score :<span id="score"></span></p>
     </div>
   </section>
   <!-- Enter Your Name Block -->
-  <section id = "enterName">
-    <h3 id = "nameTitle">Enter Your Name to record your score!</h3>
-    <br>
-    <form>
-      TODO; add form
-      <h4 id = "playerName"></h4>
-    </form>
+  <section class = "enterName">
+      <h4 id = "nameTitle">Enter Your Name to record your score!</h4>
+      <br>
+      <form>
+        <label for="userName">Name</label>
+          <input type="name" id="name" placeholder="Enter Your Name" name="name">
+        <label for="userScore">Enter Your Score</label>
+          <input type="score" id="userScore" placeholder="Enter Your Score" name="userScore">
+        </label>
+        <button id = "submitBtn" type="submit">Submit</button>
+      </form>
   </section>
 </div>
-<!-- TODO pull Player Score Screen -->
 
-<!-- TODO: push HighScoreScreen -->
-<div id = "HighScoreScreen">
-  <!-- logo -->
+<!-- List of High Scores -->
+<div id = "highScoreScreen" class = "hide"></div>
+    <h2 class = "highScoresList hide">HIGH SCORES</h2>
   <div>
-    <h2 id = "titleLogo">Quiz Cat (logo)</h2>
-  </div>
-  <!-- High Score Block-->
-  <section>
-    <h3 id = "highScoreTitle">High Scores!:</h3>
-      <ol id = "scoreList">
-        <li>
-          ...
-        </li>
-      </ol>
-  </section>
+    <ol id = "highScoresList"></ol>
+  </div>  
 </div>
-  
+
+</main>
+  <script src="./Assets/JS/script.js"></script>
 </body>
 </html>
